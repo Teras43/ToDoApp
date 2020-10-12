@@ -1,0 +1,42 @@
+// Variables
+$topBannerColor: #0A2239;
+$listHalfColor: #E5E7E6;
+$taskHalfColor: #767B91;
+
+// CSS
+
+#pageContainer {
+    padding: 0;
+}
+
+#topBanner {
+    background-color: $topBannerColor;
+    color: $listHalfColor;
+}
+
+#body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#listHalf {
+    background-color: $listHalfColor;
+    border-right: 1px solid black;
+}
+
+#taskHalf {
+    background-color: lighten($taskHalfColor, 30%);
+}
+
+.h2 {
+    width: 3em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+#borderSeparate {
+    height: 100vh;
+    border-right: 2px solid black;
+    background-color: lighten($listHalfColor, 15%);
+}
