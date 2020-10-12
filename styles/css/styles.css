@@ -28,6 +28,12 @@
   border-bottom: 1px solid black;
 }
 
+.active {
+  color: white;
+  background-color: #0A2239;
+  border-radius: 3px;
+}
+
 #borderSeparate {
   height: 100vh;
   border-right: 2px solid black;
