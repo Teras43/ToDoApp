@@ -40,4 +40,49 @@
   background-color: white;
 }
 
+#newListName {
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  transition: border-bottom 150ms ease-in;
+  order: 2;
+}
+
+#newListName:focus {
+  border-bottom-width: 2px;
+}
+
+#newListName:focus::placeholder {
+  opacity: 0.2;
+}
+
+.listButton {
+  margin-right: 10px;
+  background: 0;
+  border: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.listButton:hover {
+  opacity: 0.3;
+}
+
+.listButton:focus {
+  outline: none;
+}
+
+.actualListName {
+  font-size: 30px;
+  text-align: center;
+}
+
+#addNewList {
+  display: flex;
+}
+
 /*# sourceMappingURL=styles.css.map */

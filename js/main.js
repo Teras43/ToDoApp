@@ -1,5 +1,6 @@
 // Variables
 const taskInput = document.getElementById('taskInput');
+const listInput = document.getElementById('newListName');
 const listOfLists = document.getElementById('listOfLists');
 const allLists = new AllListContainer();
 let currentList;
@@ -17,12 +18,11 @@ function selectList(id) {
 }
 
 function newList(event) {
-    if (event.keyCode === 13) {
-        const taskListName = event.target.value;
-        currentList = allLists.addList(listOfLists, taskListName)
-        selectList(currentList.id);
-        event.target.value = '';
-    }
+    if (event.type === "keydown" && event.keyCode !== 13) return;
+    const taskListName = listInput.value;
+    currentList = allLists.addList(listOfLists, taskListName)
+    selectList(currentList.id);
+    listInput.value = '';
 }
 
 function addTask(event) {

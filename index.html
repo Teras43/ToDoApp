@@ -32,11 +32,11 @@
                 <div id="listsTop" class="h2">
                     Lists
                 </div>
-                <div id="listOfLists"></div>
                 <div id="addNewList">
-                    <input type="text" id="newListName" onkeydown="newList(event)">
-                    <button onclick="newList(event)">New List!</button>
+                    <input type="text" id="newListName" placeholder="Enter List Name" onkeydown="newList(event)" class="mb-3">
+                    <button class="listButton" onclick="newList(event)">+</button>
                 </div>
+                <div id="listOfLists"></div>
             </div>
             <div id="taskHalf" class="text-left col-9 pt-4 pl-5">
                 <div id="tasksTop" class="h2">

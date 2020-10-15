@@ -8,7 +8,7 @@ class AllListContainer {
         this.lists[id] = newList;
         const node =
             `
-            <div id="${id}" class="h5 pb-4 pt-4 pl-5" onclick="selectList(${id})">
+            <div id="${id}" class="actualListName h5 pb-4 pt-4" onclick="selectList(${id})">
             <p>${name}</p>
             </div>
             `
@@ -55,8 +55,9 @@ class List {
             const task = this.tasks[id];
             allTasks += 
                 `
-                <div id="${id}" class="taskBorder">
-                <div>${task.name}</div>
+                <div id="${id}" class="taskBorder pb-4">
+                <input type="checkbox" id="taskCheck">
+                <label for="taskCheck"><span class="customCheck"></span>${task.name}</label>
                 <div>${task.description}</div>
                 </div>
                 `
