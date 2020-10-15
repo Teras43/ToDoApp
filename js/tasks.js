@@ -4,7 +4,8 @@ class AllListContainer {
     }
     addList(location, name) {
         const id = randomId();
-        this.lists[id] = new List(id, name);
+        const newList = new List(id, name);
+        this.lists[id] = newList;
         const node =
             `
             <div id="${id}" class="h5 pb-4 pt-4 pl-5" onclick="selectList(${id})">
@@ -12,6 +13,7 @@ class AllListContainer {
             </div>
             `
         location.insertAdjacentHTML('beforeend', node);
+        return newList;
     }
     getList(id) {
         return this.lists[id]
@@ -41,7 +43,7 @@ class List {
         this.name = name;
         this.tasks = {};
     }
-    addTask(name, description) {
+    addTask(name, description = '') {
         const id = randomId();
         this.tasks[id] = new Task(id, name, description);
         this.renderTasks();
