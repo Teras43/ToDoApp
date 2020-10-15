@@ -84,10 +84,69 @@ $taskHalfColor: #767B91;
 }
 
 .actualListName {
+    cursor: pointer;
     font-size: 30px;
     text-align: center;
 }
 
+.actualListName:hover {
+    opacity: 0.7;
+}
+
 #addNewList {
     display: flex;
+}
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.taskCheck {
+    margin-bottom: 0;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+}
+
+.task label {
+    position: relative;
+}
+
+// .task label::after {
+//     content: "";
+//     position: absolute;
+//     right: 0;
+//     left: 0;
+//     bottom: -50%;
+//     height: 1px;
+//     background: black;
+//     opacity: 0.8;
+// }
+
+.customCheck {
+    --size: 0.75em;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.deleteWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    height: 20px;
+    width: 20px;
+}
+
+.trashImg {
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
 }

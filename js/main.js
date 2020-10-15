@@ -23,6 +23,7 @@ function newList(event) {
     currentList = allLists.addList(listOfLists, taskListName)
     selectList(currentList.id);
     listInput.value = '';
+    // allLists.saveData();
 }
 
 function addTask(event) {
@@ -31,4 +32,19 @@ function addTask(event) {
         currentList.addTask(taskInput.value);
     }
     taskInput.value = '';
+    // allLists.saveData();
+}
+
+// Delete Functions
+const animateDeleteProperties = {
+    marginLeft: "125%",
+    opacity: 0
+}
+
+function deleteTask(event) {
+    const eventTarget = $(event.target);
+    const taskItem = eventTarget.parent().parent().parent();
+    currentList.removeTask(taskItem.attr("id"));
+    taskItem.animate(animateDeleteProperties, 1000, () => taskItem.remove());
+    // allLists.saveData();
 }

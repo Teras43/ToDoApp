@@ -21,6 +21,12 @@ class AllListContainer {
     removeList(id) {
         this.lists[id] = null;
     }
+    saveData() {
+        
+    }
+    loadData() {
+        // Set this.lists = parse localStorage
+    }
 }
 
 class Task {
@@ -48,6 +54,9 @@ class List {
         this.tasks[id] = new Task(id, name, description);
         this.renderTasks();
     }
+    getTask(id) {
+        return this.tasks[id];
+    }
     renderTasks() {
         document.getElementById('taskArea').innerHTML = '';
         let allTasks = '';
@@ -56,12 +65,19 @@ class List {
             allTasks += 
                 `
                 <div id="${id}" class="taskBorder pb-4">
-                <input type="checkbox" id="taskCheck">
-                <label for="taskCheck"><span class="customCheck"></span>${task.name}</label>
-                <div>${task.description}</div>
+                    <div class="task">
+                        <input type="checkbox" id="taskCheck">
+                        <label for="taskCheck"><span class="customCheck mr-3"></span>${task.name}</label>
+                        <div class="deleteWrapper" onclick="animateDelete(event)">
+                            <img class="trashImg" src="./assets/trash-can.png"/>
+                        </div>
+                    </div>
                 </div>
                 `
         }
         document.getElementById('taskArea').insertAdjacentHTML('beforeend', allTasks);
+    }
+    removeTask(id) {
+        delete this.tasks[id];
     }
 }
