@@ -3,7 +3,7 @@ const taskInput = document.getElementById('taskInput');
 const listInput = document.getElementById('newListName');
 const listOfLists = document.getElementById('listOfLists');
 const allLists = new AllListContainer();
-let currentList;
+let currentList
 
 // Functions
 function selectList(id) {
@@ -13,7 +13,9 @@ function selectList(id) {
         element.classList.remove('active');
     })
     node.classList.add('active');
-    currentList.renderTasks();
+    if (currentList !== undefined) {
+        currentList.renderTasks();
+    }
 }
 
 function newList(event) {
@@ -22,7 +24,7 @@ function newList(event) {
     currentList = allLists.addList(listOfLists, taskListName)
     selectList(currentList.id);
     listInput.value = '';
-    // allLists.saveData();
+    allLists.saveData();
 }
 
 function addTask(event) {
@@ -31,12 +33,17 @@ function addTask(event) {
         currentList.addTask(taskInput.value);
     }
     taskInput.value = '';
-    // allLists.saveData();
+    allLists.saveData();
 }
 
 // Delete Functions
-const animateDeleteProperties = {
+const animateTaskDeleteProperties = {
     marginLeft: "125%",
+    opacity: 0
+}
+
+const animateListDeleteProperties = {
+    marginRight: "125%",
     opacity: 0
 }
 
@@ -44,8 +51,17 @@ function deleteTask(event) {
     const eventTarget = $(event.target);
     const taskItem = eventTarget.parent().parent().parent();
     currentList.removeTask(taskItem.attr("id"));
-    taskItem.animate(animateDeleteProperties, 1000, () => taskItem.remove());
-    // allLists.saveData();
+    taskItem.animate(animateTaskDeleteProperties, 1000, () => taskItem.remove());
+    allLists.saveData();
+}
+
+function deleteCurrentList(event) {
+    const eventTarget = $(event.target);
+    const listItem = eventTarget.parent().parent();
+    allLists.removeList(listItem.attr("id"));
+    listItem.animate(animateListDeleteProperties, 1000, () => listItem.remove());
+    allLists.saveData();
 }
 
 // allLists.loadData();
+// currentList.renderTasks();

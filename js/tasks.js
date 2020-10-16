@@ -9,7 +9,10 @@ class AllListContainer {
         const node =
             `
             <div id="${id}" class="actualListName h5 pb-4 pt-4" onclick="selectList(${id})">
-            <p>${name}</p>
+                <p>${name}</p>
+                <div class="deleteWrapperList" onclick="deleteCurrentList(event)">
+                    <img class="trashImgList" src="./assets/trash-can.png"/>
+                </div>
             </div>
             `
         location.insertAdjacentHTML('beforeend', node);
@@ -19,18 +22,17 @@ class AllListContainer {
         return this.lists[id]
     }
     removeList(id) {
-        this.lists[id] = null;
+        delete this.lists[id];
     }
-    // saveData() {
-    //     localStorage.setItem("currentList", JSON.stringify(currentList));
-        
-    //     console.log("Data Saved!");
-    // }
-    // loadData() {
-        // this.lists = JSON.parse(localStorage.getItem("currentList"));
-        // console.log("Data retrieved!");
-        
-    // }
+    saveData() {
+        localStorage.setItem("allLists", JSON.stringify(allLists.lists));
+        console.log("Data Saved!");
+    }
+    loadData() {
+        this.lists = JSON.parse(localStorage.getItem("allLists"));
+        console.log("Data retrieved!");
+        allLists.lists = currentList;
+    }
 }
 
 class Task {

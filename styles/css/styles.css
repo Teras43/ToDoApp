@@ -11,11 +11,81 @@
   height: 100vh;
   margin: 0;
   padding: 0;
+  width: 100vw;
 }
 
 #listHalf {
   background-color: #E5E7E6;
   border-right: 1px solid black;
+}
+#listHalf #addNewList {
+  display: flex;
+}
+#listHalf #addNewList #newListName {
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  transition: border-bottom 150ms ease-in;
+  order: 2;
+}
+#listHalf #addNewList #newListName:focus {
+  border-bottom-width: 2px;
+}
+#listHalf #addNewList #newListName:focus::placeholder {
+  opacity: 0.2;
+}
+#listHalf #addNewList .listButton {
+  margin-right: 10px;
+  background: 0;
+  border: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+#listHalf #addNewList .listButton:hover {
+  opacity: 0.3;
+}
+#listHalf #addNewList .listButton:focus {
+  outline: none;
+}
+#listHalf #deleteListBtn {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+#listHalf #deleteListBtn .deleteListAll {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  font-size: 12px;
+  text-decoration: underline;
+}
+#listHalf #deleteListBtn .deleteListAll:hover {
+  opacity: 0.6;
+}
+#listHalf #listOfLists p {
+  margin: 0;
+}
+#listHalf #listOfLists .actualListName {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#listHalf #listOfLists .actualListName .deleteWrapperList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+}
+#listHalf #listOfLists .actualListName .trashImgList {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
 }
 
 #taskHalf {
@@ -34,48 +104,6 @@
   border-radius: 3px;
 }
 
-#borderSeparate {
-  height: 100vh;
-  border-right: 2px solid black;
-  background-color: white;
-}
-
-#newListName {
-  font-size: 20px;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid black;
-  outline: none;
-  transition: border-bottom 150ms ease-in;
-  order: 2;
-}
-
-#newListName:focus {
-  border-bottom-width: 2px;
-}
-
-#newListName:focus::placeholder {
-  opacity: 0.2;
-}
-
-.listButton {
-  margin-right: 10px;
-  background: 0;
-  border: 0;
-  padding: 0;
-  padding-bottom: 20px;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-.listButton:hover {
-  opacity: 0.3;
-}
-
-.listButton:focus {
-  outline: none;
-}
-
 .actualListName {
   cursor: pointer;
   font-size: 30px;
@@ -84,10 +112,6 @@
 
 .actualListName:hover {
   opacity: 0.7;
-}
-
-#addNewList {
-  display: flex;
 }
 
 [type=checkbox] {

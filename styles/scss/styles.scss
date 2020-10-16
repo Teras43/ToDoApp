@@ -18,11 +18,97 @@ $taskHalfColor: #767B91;
     height: 100vh;
     margin: 0;
     padding: 0;
+    width: 100vw;
 }
 
 #listHalf {
     background-color: $listHalfColor;
     border-right: 1px solid black;
+
+    #addNewList {
+        display: flex;
+
+        #newListName {
+            font-size: 20px;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid black;
+            outline: none;
+            transition: border-bottom 150ms ease-in;
+            order: 2;
+        }
+
+        #newListName:focus {
+            border-bottom-width: 2px;
+        }
+
+        #newListName:focus::placeholder {
+            opacity: 0.2;
+        }
+
+        .listButton {
+            margin-right: 10px;
+            background: 0;
+            border: 0;
+            padding: 0;
+            padding-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .listButton:hover {
+            opacity: 0.3;
+        }
+
+        .listButton:focus {
+            outline: none;
+        }
+    }
+
+    #deleteListBtn {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+
+        .deleteListAll {
+            cursor: pointer;
+            background: 0;
+            border: 0;
+            padding: 0;
+            font-size: 12px;
+            text-decoration: underline;
+        }
+
+        .deleteListAll:hover {
+            opacity: 0.6;
+        }
+    }
+
+    #listOfLists {
+        p {
+            margin: 0;
+        }
+
+        .actualListName {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .deleteWrapperList {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                width: 30px;
+            }
+
+            .trashImgList {
+                object-fit: fill;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
 }
 
 #taskHalf {
@@ -41,48 +127,6 @@ $taskHalfColor: #767B91;
     border-radius: 3px;
 }
 
-#borderSeparate {
-    height: 100vh;
-    border-right: 2px solid black;
-    background-color: lighten($listHalfColor, 15%);
-}
-
-#newListName {
-    font-size: 20px;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid black;
-    outline: none;
-    transition: border-bottom 150ms ease-in;
-    order: 2;
-}
-
-#newListName:focus {
-    border-bottom-width: 2px;
-}
-
-#newListName:focus::placeholder {
-    opacity: 0.2;
-}
-
-.listButton {
-    margin-right: 10px;
-    background: 0;
-    border: 0;
-    padding: 0;
-    padding-bottom: 20px;
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-
-.listButton:hover {
-    opacity: 0.3;
-}
-
-.listButton:focus {
-    outline: none;
-}
-
 .actualListName {
     cursor: pointer;
     font-size: 30px;
@@ -91,10 +135,6 @@ $taskHalfColor: #767B91;
 
 .actualListName:hover {
     opacity: 0.7;
-}
-
-#addNewList {
-    display: flex;
 }
 
 [type="checkbox"] {
