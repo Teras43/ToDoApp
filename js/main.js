@@ -45,5 +45,7 @@ function deleteTask(event) {
     const taskItem = eventTarget.parent().parent().parent();
     currentList.removeTask(taskItem.attr("id"));
     taskItem.animate(animateDeleteProperties, 1000, () => taskItem.remove());
-    allLists.saveData();
+    // allLists.saveData();
 }
+
+allLists.loadData();
