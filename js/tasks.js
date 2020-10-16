@@ -22,10 +22,11 @@ class AllListContainer {
         this.lists[id] = null;
     }
     saveData() {
-        
+        localStorage.setItem("currentList", JSON.stringify(currentList));
+        console.log("Data Saved!")
     }
     loadData() {
-        // Set this.lists = parse localStorage
+        
     }
 }
 

@@ -14,7 +14,6 @@ function selectList(id) {
     })
     node.classList.add('active');
     currentList.renderTasks();
-    console.log(currentList);
 }
 
 function newList(event) {
@@ -23,7 +22,7 @@ function newList(event) {
     currentList = allLists.addList(listOfLists, taskListName)
     selectList(currentList.id);
     listInput.value = '';
-    // allLists.saveData();
+    allLists.saveData();
 }
 
 function addTask(event) {
@@ -32,7 +31,7 @@ function addTask(event) {
         currentList.addTask(taskInput.value);
     }
     taskInput.value = '';
-    // allLists.saveData();
+    allLists.saveData();
 }
 
 // Delete Functions
@@ -46,5 +45,5 @@ function deleteTask(event) {
     const taskItem = eventTarget.parent().parent().parent();
     currentList.removeTask(taskItem.attr("id"));
     taskItem.animate(animateDeleteProperties, 1000, () => taskItem.remove());
-    // allLists.saveData();
+    allLists.saveData();
 }
