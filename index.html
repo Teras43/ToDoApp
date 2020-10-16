@@ -47,11 +47,16 @@
                 <div id="tasksTop" class="h2">
                     Tasks
                 </div>
+                <div id="deleteCompletedBtn">
+                    <button class="deleteCompletedTasks" onclick="">Delete Completed Tasks</button>
+                </div>
+                <div id="addNewTask">
+                    <input type="text" id="taskInput" placeholder="Enter Task Name" onkeydown="addTask(event)">
+                    <button class="listButton" onclick="addTask(event)">+</button>
+                </div>
                 <div id="taskArea" class="pl-5 pt-5 h4">
 
                 </div>
-                <input type="text" id="taskInput" onkeydown="addTask(event)">
-                <button onclick="addTask(event)">Add Task!</button>
             </div>
         </div>
         <div id="bottomBanner">

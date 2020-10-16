@@ -40,15 +40,13 @@ class AllListContainer {
 }
 
 class Task {
-    constructor(id, name, description) {
+    constructor(id, name,) {
         this.id = id;
         this.name = name;
-        this.description = description;
         this.isComplete = false;
     }
-    editTask(name, description, isComplete) {
+    editTask(name, isComplete) {
         this.name = name;
-        this.description = description;
         this.isComplete = isComplete;
     }
 }
@@ -59,9 +57,9 @@ class List {
         this.name = name;
         this.tasks = {};
     }
-    addTask(name, description = '') {
+    addTask(name) {
         const id = randomId();
-        this.tasks[id] = new Task(id, name, description);
+        this.tasks[id] = new Task(id, name);
         this.renderTasks();
     }
     getTask(id) {

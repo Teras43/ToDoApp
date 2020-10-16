@@ -36,21 +36,6 @@
 #listHalf #addNewList #newListName:focus::placeholder {
   opacity: 0.2;
 }
-#listHalf #addNewList .listButton {
-  margin-right: 10px;
-  background: 0;
-  border: 0;
-  padding: 0;
-  padding-bottom: 20px;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-#listHalf #addNewList .listButton:hover {
-  opacity: 0.3;
-}
-#listHalf #addNewList .listButton:focus {
-  outline: none;
-}
 #listHalf #deleteListBtn {
   display: flex;
   justify-content: flex-start;
@@ -88,8 +73,56 @@
   width: 100%;
 }
 
+.listButton {
+  margin-right: 10px;
+  background: 0;
+  border: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.listButton:hover {
+  opacity: 0.3;
+}
+
+.listButton:focus {
+  outline: none;
+}
+
 #taskHalf {
   background-color: #cbcdd5;
+}
+#taskHalf #deleteCompletedBtn {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+#taskHalf #deleteCompletedBtn .deleteCompletedTasks {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  font-size: 12px;
+  text-decoration: underline;
+}
+#taskHalf #deleteCompletedBtn .deleteCompletedTasks:hover {
+  opacity: 0.6;
+}
+#taskHalf #addNewTask {
+  display: flex;
+  align-items: center;
+}
+#taskHalf #addNewTask #taskInput {
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  transition: border-bottom 150ms ease-in;
+  order: 2;
+  margin-bottom: 16px;
 }
 
 .h2 {
