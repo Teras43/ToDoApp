@@ -2,20 +2,11 @@ class AllListContainer {
     constructor() {
         this.lists = {};
     }
-    addList(location, name) {
+    addList(name) {
         const id = randomId();
         const newList = new List(id, name);
         this.lists[id] = newList;
-        const node =
-            `
-            <div id="${id}" class="actualListName h5 pb-4 pt-4" onclick="selectList(${id})">
-                <p>${name}</p>
-                <div class="deleteWrapperList" onclick="deleteCurrentList(event)">
-                    <img class="trashImgList" src="./assets/trash-can.png"/>
-                </div>
-            </div>
-            `
-        location.insertAdjacentHTML('beforeend', node);
+        this.renderLists();
         return newList;
     }
     getList(id) {
@@ -28,22 +19,47 @@ class AllListContainer {
         delete this.lists;
         this.lists = {};
     }
+    renderLists() {
+        document.getElementById('listOfLists').innerHTML = '';
+        let allLists = '';
+        for (const id in this.lists) {
+            const list = this.lists[id];
+            allLists +=
+            `
+            <div id="${list.id}" class="actualListName h5 pb-4 pt-4" onclick="selectList(${list.id})">
+                <p>${list.name}</p>
+                <div class="deleteWrapperList" onclick="deleteCurrentList(event)">
+                    <img class="trashImgList" src="./assets/trash-can.png"/>
+                </div>
+            </div>
+            `
+        }
+        document.getElementById('listOfLists').insertAdjacentHTML('beforeend', allLists);
+    }
     saveData() {
         localStorage.setItem("allLists", JSON.stringify(allLists.lists));
-        console.log("Data Saved!");
     }
     loadData() {
-        this.lists = JSON.parse(localStorage.getItem("allLists"));
-        console.log("Data retrieved!");
-        allLists.lists = currentList;
+        const savedData = localStorage.getItem("allLists");
+        if (savedData) {
+            const parsedData = JSON.parse(savedData)
+            for (const listId in parsedData) {
+                const list = parsedData[listId]
+                this.lists[listId] = new List(list.id, list.name)
+                for (const taskId in list.tasks) {
+                    const task = list.tasks[taskId]
+                    this.lists[listId].tasks[taskId] = new Task(task.id, task.name, task.isComplete)
+                }
+            }
+        }
     }
 }
 
 class Task {
-    constructor(id, name,) {
+    constructor(id, name, isComplete = false) {
         this.id = id;
         this.name = name;
-        this.isComplete = false;
+        this.isComplete = isComplete;
     }
     editTask(name, isComplete) {
         this.name = name;

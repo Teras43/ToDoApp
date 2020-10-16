@@ -13,22 +13,20 @@ function selectList(id) {
         element.classList.remove('active');
     })
     node.classList.add('active');
-    if (currentList !== undefined) {
-        currentList.renderTasks();
-    }
+    currentList.renderTasks();
 }
 
 function newList(event) {
     if (event.type === "keydown" && event.keyCode !== 13) return;
     const taskListName = listInput.value;
-    currentList = allLists.addList(listOfLists, taskListName)
+    currentList = allLists.addList(taskListName)
     selectList(currentList.id);
     listInput.value = '';
     allLists.saveData();
 }
 
 function addTask(event) {
-    if(event.type === "keydown" && event.keyCode !== 13) return;
+    if (event.type === "keydown" && event.keyCode !== 13) return;
     if (currentList !== undefined) {
         currentList.addTask(taskInput.value);
     }
@@ -70,5 +68,5 @@ function deleteAllLists() {
     allLists.saveData();
 }
 
-// allLists.loadData();
-// currentList.renderTasks();
+allLists.loadData();
+allLists.renderLists();
