@@ -24,6 +24,10 @@ class AllListContainer {
     removeList(id) {
         delete this.lists[id];
     }
+    removeAllLists() {
+        delete this.lists;
+        this.lists = {};
+    }
     saveData() {
         localStorage.setItem("allLists", JSON.stringify(allLists.lists));
         console.log("Data Saved!");

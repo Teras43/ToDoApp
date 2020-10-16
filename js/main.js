@@ -63,5 +63,12 @@ function deleteCurrentList(event) {
     allLists.saveData();
 }
 
+function deleteAllLists() {
+    const allListItems = allLists.lists;
+    allListItems.removeAllLists();
+    allListItems.animate(animateListDeleteProperties, 1000, () => allListItems.remove());
+    allLists.saveData();
+}
+
 // allLists.loadData();
 // currentList.renderTasks();

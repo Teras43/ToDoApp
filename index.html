@@ -34,12 +34,12 @@
                     Lists
                 </div>
                 <div id="deleteListBtn">
-                    <button class="deleteListAll">Delete All</button>
+                    <button class="deleteListAll" onclick="deleteAllLists()">Delete All</button>
                 </div>
                 <div id="addNewList">
                     <input type="text" id="newListName" placeholder="Enter List Name" onkeydown="newList(event)"
                         class="mb-3">
-                    <button class="listButton" onclick="newList(event)">+</button>
+                    <button class="listButton" onclick="newList()">+</button>
                 </div>
                 <div id="listOfLists"></div>
             </div>
