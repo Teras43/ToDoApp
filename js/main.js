@@ -22,7 +22,7 @@ function newList(event) {
     currentList = allLists.addList(listOfLists, taskListName)
     selectList(currentList.id);
     listInput.value = '';
-    allLists.saveData();
+    // allLists.saveData();
 }
 
 function addTask(event) {
@@ -31,7 +31,7 @@ function addTask(event) {
         currentList.addTask(taskInput.value);
     }
     taskInput.value = '';
-    allLists.saveData();
+    // allLists.saveData();
 }
 
 // Delete Functions
@@ -48,4 +48,4 @@ function deleteTask(event) {
     // allLists.saveData();
 }
 
-allLists.loadData();
+// allLists.loadData();

@@ -21,14 +21,16 @@ class AllListContainer {
     removeList(id) {
         this.lists[id] = null;
     }
-    saveData() {
-        localStorage.setItem("currentList", JSON.stringify(currentList));
-        console.log("Data Saved!");
-    }
-    loadData() {
-        this.lists = JSON.parse(localStorage.getItem("currentList"));
-        console.log("Data retrieved!");
-    }
+    // saveData() {
+    //     localStorage.setItem("currentList", JSON.stringify(currentList));
+        
+    //     console.log("Data Saved!");
+    // }
+    // loadData() {
+        // this.lists = JSON.parse(localStorage.getItem("currentList"));
+        // console.log("Data retrieved!");
+        
+    // }
 }
 
 class Task {
@@ -70,7 +72,7 @@ class List {
                     <div class="task">
                         <input type="checkbox" id="taskCheck">
                         <label for="taskCheck"><span class="customCheck mr-3"></span>${task.name}</label>
-                        <div class="deleteWrapper" onclick="animateDelete(event)">
+                        <div class="deleteWrapper" onclick="deleteTask(event)">
                             <img class="trashImg" src="./assets/trash-can.png"/>
                         </div>
                     </div>
