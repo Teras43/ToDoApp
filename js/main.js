@@ -20,16 +20,24 @@ function selectList(id) {
 function newList(event) {
     if (event.type === "keydown" && event.keyCode !== 13) return;
     const taskListName = listInput.value;
-    currentList = allLists.addList(taskListName)
-    selectList(currentList.id);
-    listInput.value = '';
+    if (listInput.value === "") {
+        return;
+    } else {
+        currentList = allLists.addList(taskListName)
+        selectList(currentList.id);
+        listInput.value = '';
+    }
     allLists.saveData();
 }
 
 function addTask(event) {
     if (event.type === "keydown" && event.keyCode !== 13) return;
+    if (document.getElementById('taskInput').value === null || document.getElementById('taskInput').value === undefined) return;
     if (currentList !== undefined) {
-        currentList.addTask(taskInput.value);
+        if (taskInput.value === "") {
+        return; } else {
+            currentList.addTask(taskInput.value);
+        }
     }
     taskInput.value = '';
     allLists.saveData();
