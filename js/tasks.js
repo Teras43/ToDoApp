@@ -104,6 +104,9 @@ class List {
                 <div class="deleteWrapper" onclick="deleteTask(event)">
                     <img class="trashImg" src="./assets/trash-can.png"/>
                 </div>
+                <div>
+                    <button class="editTaskButton" onclick="editTask()">Edit</button>
+                </div>
             </div>
         </div>
         `;
@@ -118,6 +121,9 @@ class List {
                 <div class="deleteWrapper" onclick="deleteTask(event)">
                     <img class="trashImg" src="./assets/trash-can.png"/>
                 </div>
+                <div>
+                    <button class="editTaskButton" onclick="editTask()">Edit</button>
+                </div>
             </div>
         </div>
         `;
@@ -130,5 +136,12 @@ class List {
   removeTask(id) {
     delete this.tasks[id];
   }
-  clearCompleteTasks() {}
+  clearCompletedTasks() {
+    for (const taskId in this.tasks) {
+        const task = this.tasks[taskId]
+        if (task.isComplete === true) {
+            this.removeTask(taskId);
+        }
+    }
+  }
 }

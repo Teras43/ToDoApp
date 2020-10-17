@@ -62,6 +62,12 @@ function deleteTask(event) {
     allLists.saveData();
 }
 
+function deleteCompletedTasks() {
+    currentList.clearCompletedTasks();
+    currentList.renderTasks();
+    allLists.saveData();
+}
+
 function deleteCurrentList(event) {
     event.preventDefault();
     const eventTarget = $(event.target);
