@@ -86,9 +86,17 @@ function deleteTask(event) {
 }
 
 function deleteCompletedTasks() {
-    currentList.clearCompletedTasks();
-    currentList.renderTasks();
-    allLists.saveData();
+    for (const taskId in currentList.tasks){
+        const task = currentList.tasks[taskId];
+        if (task.isComplete === true) {
+            const node = $(document.getElementById(taskId))
+            node.animate(animateTaskDeleteProperties, 1000, () => {
+                currentList.removeTask(taskId)
+                currentList.renderTasks()
+                allLists.saveData();
+            });
+        }
+    }
 }
 
 function deleteCurrentList(event) {
