@@ -34,6 +34,15 @@ function addTask(event) {
     allLists.saveData();
 }
 
+function toggleTaskComplete(event) {
+    // debugger
+    const eventTarget = $(event.target);
+    const node = eventTarget.parent().parent();
+    const task = currentList.getTask(node.attr("id"));
+    task.toggleComplete();
+    currentList.renderTasks();
+}
+
 // Delete Functions
 const animateTaskDeleteProperties = {
     marginLeft: "125%",

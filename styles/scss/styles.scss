@@ -187,18 +187,34 @@ $taskHalfColor: #767B91;
     align-items: center;
 }
 
+.taskComplete {
+    display: flex;
+    align-items: center;
+    opacity: 0.4;
+}
+
 .task label {
     position: relative;
 }
 
 .customCheck {
-    --size: 0.75em;
     display: inline-block;
-    width: var(--size);
-    height: var(--size);
+    margin-right: 16px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     border: 2px solid black;
     border-radius: 50%;
+}
+.customCheckFilled {
+    display: inline-block;
+    margin-right: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: black;
 }
 
 .deleteWrapper {
