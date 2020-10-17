@@ -63,17 +63,13 @@ function deleteTask(event) {
 }
 
 function deleteCurrentList(event) {
+    event.preventDefault();
     const eventTarget = $(event.target);
     const listItem = eventTarget.parent().parent();
     allLists.removeList(listItem.attr("id"));
     listItem.animate(animateListDeleteProperties, 1000, () => listItem.remove());
-    allLists.saveData();
-}
-
-function deleteAllLists() {
-    const allListItems = allLists.lists;
-    allListItems.removeAllLists();
-    allListItems.animate(animateListDeleteProperties, 1000, () => allListItems.remove());
+    currentList = undefined;
+    document.getElementById("taskArea").innerHTML = "";
     allLists.saveData();
 }
 
