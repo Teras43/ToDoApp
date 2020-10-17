@@ -26,7 +26,9 @@ class AllListContainer {
       const list = this.lists[id];
       allLists += `
             <div id="${list.id}" class="actualListName h5 pb-4 pt-4">
-                <p onclick="selectList(${list.id})">${list.name}</p>
+                <div class="listSelectorDiv" onclick="selectList(${list.id})">
+                    <p>${list.name}</p>
+                </div>
                 <div class="deleteWrapperList" onclick="deleteCurrentList(event)">
                     <img class="trashImgList" src="./assets/trash-can.png"/>
                 </div>

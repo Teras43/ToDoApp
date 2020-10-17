@@ -82,6 +82,7 @@ $taskHalfColor: #767B91;
                 justify-content: center;
                 height: 30px;
                 width: 30px;
+                margin-right: 25px;
             }
 
             .trashImgList {
@@ -110,6 +111,12 @@ $taskHalfColor: #767B91;
 
 .listButton:focus {
     outline: none;
+}
+
+.listSelectorDiv {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
 }
 
 #taskHalf {
