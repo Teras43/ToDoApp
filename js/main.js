@@ -43,6 +43,14 @@ function toggleTaskComplete(event) {
     currentList.renderTasks();
 }
 
+function editSelectedTask(event) {
+    const eventTarget = $(event.target);
+    const node = eventTarget.parent().previousElementSibling().previousElementSibling();
+    const task = currentList.getTask(node.attr("id"));
+    task.editTask();
+    currentList.renderTasks();
+}
+
 // Delete Functions
 const animateTaskDeleteProperties = {
     marginLeft: "125%",

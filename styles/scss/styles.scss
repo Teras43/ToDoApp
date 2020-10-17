@@ -149,7 +149,43 @@ $taskHalfColor: #767B91;
             margin-bottom: 16px;
         }
     }
+}
 
+.editTaskButton {
+    background-color: $topBannerColor;
+    margin-left: 20px;
+}
+
+.editTaskButton:hover {
+    background-color: $topBannerColor;
+}
+
+.editTaskButton:active {
+    background-color: $topBannerColor;
+}
+
+.editTaskButton:focus {
+    background-color: $topBannerColor;
+}
+
+.modal-content {
+    background-color: $listHalfColor;
+}
+
+.saveEditButton {
+    background-color: $topBannerColor;
+}
+
+.saveEditButton:hover {
+    background-color: $topBannerColor;
+}
+
+.saveEditButton:active {
+    background-color: $topBannerColor;
+}
+
+.saveEditButton:focus {
+    background-color: $topBannerColor;
 }
 
 .h2 {

@@ -71,6 +71,7 @@
   object-fit: fill;
   height: 100%;
   width: 100%;
+  z-index: 10;
 }
 
 .listButton {
@@ -123,6 +124,43 @@
   transition: border-bottom 150ms ease-in;
   order: 2;
   margin-bottom: 16px;
+}
+
+.editTaskButton {
+  background-color: #0A2239;
+  margin-left: 20px;
+}
+
+.editTaskButton:hover {
+  background-color: #0A2239;
+}
+
+.editTaskButton:active {
+  background-color: #0A2239;
+}
+
+.editTaskButton:focus {
+  background-color: #0A2239;
+}
+
+.modal-content {
+  background-color: #E5E7E6;
+}
+
+.saveEditButton {
+  background-color: #0A2239;
+}
+
+.saveEditButton:hover {
+  background-color: #0A2239;
+}
+
+.saveEditButton:active {
+  background-color: #0A2239;
+}
+
+.saveEditButton:focus {
+  background-color: #0A2239;
 }
 
 .h2 {
