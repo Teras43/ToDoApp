@@ -159,8 +159,13 @@ $taskHalfColor: #767B91;
 }
 
 .editTaskButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $topBannerColor;
     margin-left: 20px;
+    width: 65px;
+    height: 30px;
 }
 
 .editTaskButton:hover {

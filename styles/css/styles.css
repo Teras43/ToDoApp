@@ -134,8 +134,13 @@
 }
 
 .editTaskButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #0A2239;
   margin-left: 20px;
+  width: 65px;
+  height: 30px;
 }
 
 .editTaskButton:hover {
