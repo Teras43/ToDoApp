@@ -4,6 +4,7 @@ const listInput = document.getElementById('newListName');
 const listOfLists = document.getElementById('listOfLists');
 const allLists = new AllListContainer();
 let currentList
+let currentTaskId
 
 // Functions
 function selectList(id) {
@@ -35,7 +36,6 @@ function addTask(event) {
 }
 
 function toggleTaskComplete(event) {
-    // debugger
     const eventTarget = $(event.target);
     const node = eventTarget.parent().parent();
     const task = currentList.getTask(node.attr("id"));
@@ -43,12 +43,19 @@ function toggleTaskComplete(event) {
     currentList.renderTasks();
 }
 
-function editSelectedTask(event) {
+function getSelectedTaskId(event) {
     const eventTarget = $(event.target);
-    const node = eventTarget.parent().previousElementSibling().previousElementSibling();
-    const task = currentList.getTask(node.attr("id"));
-    task.editTask();
+    const node = eventTarget.parent().parent();
+    let task = currentList.getTask(node.attr("id"));
+    currentTaskId = task;
+}
+
+function editSelectedTask() {
+    let inputValue = document.getElementById('modalInputBox');
+    currentTaskId.editTask(inputValue.value);
+    inputValue.value = '';
     currentList.renderTasks();
+    allLists.saveData();
 }
 
 // Delete Functions

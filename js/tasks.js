@@ -104,7 +104,7 @@ class List {
                 <div class="deleteWrapper" onclick="deleteTask(event)">
                     <img class="trashImg" src="./assets/trash-can.png"/>
                 </div>
-                <button type="button" class="btn btn-primary editTaskButton" data-toggle="modal" data-target="#editModal">
+                <button type="button" class="btn btn-primary editTaskButton" data-toggle="modal" data-target="#editModal" onclick="getSelectedTaskId(event)">
                     Edit
                 </button>
             </div>
@@ -121,7 +121,7 @@ class List {
                 <div class="deleteWrapper" onclick="deleteTask(event)">
                     <img class="trashImg" src="./assets/trash-can.png"/>
                 </div>
-                <button type="button" class="btn btn-primary editTaskButton" data-toggle="modal" data-target="#editModal">
+                <button type="button" class="btn btn-primary editTaskButton" data-toggle="modal" data-target="#editModal" onclick="getSelectedTaskId(event)">
                     Edit
                 </button>
             </div>
