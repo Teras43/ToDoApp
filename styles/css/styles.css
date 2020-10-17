@@ -1,3 +1,260 @@
+#pageContainer {
+  padding: 0;
+}
 
+#topBanner {
+  background-color: #0A2239;
+  color: #E5E7E6;
+}
+
+#body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+#listHalf {
+  background-color: #E5E7E6;
+  border-right: 1px solid black;
+}
+#listHalf #addNewList {
+  display: flex;
+}
+#listHalf #addNewList #newListName {
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  transition: border-bottom 150ms ease-in;
+  order: 2;
+}
+#listHalf #addNewList #newListName:focus {
+  border-bottom-width: 2px;
+}
+#listHalf #addNewList #newListName:focus::placeholder {
+  opacity: 0.2;
+}
+#listHalf #deleteListBtn {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+#listHalf #deleteListBtn .deleteListAll {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  font-size: 12px;
+  text-decoration: underline;
+}
+#listHalf #deleteListBtn .deleteListAll:hover {
+  opacity: 0.6;
+}
+#listHalf #listOfLists p {
+  margin: 0;
+}
+#listHalf #listOfLists .actualListName {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#listHalf #listOfLists .actualListName .deleteWrapperList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  margin-right: 25px;
+}
+#listHalf #listOfLists .actualListName .trashImgList {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.listButton {
+  margin-right: 10px;
+  background: 0;
+  border: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.listButton:hover {
+  opacity: 0.3;
+}
+
+.listButton:focus {
+  outline: none;
+}
+
+.listSelectorDiv {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+
+#taskHalf {
+  background-color: #cbcdd5;
+}
+#taskHalf #deleteCompletedBtn {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+#taskHalf #deleteCompletedBtn .deleteCompletedTasks {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  font-size: 12px;
+  text-decoration: underline;
+}
+#taskHalf #deleteCompletedBtn .deleteCompletedTasks:hover {
+  opacity: 0.6;
+}
+#taskHalf #addNewTask {
+  display: flex;
+  align-items: center;
+}
+#taskHalf #addNewTask #taskInput {
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  transition: border-bottom 150ms ease-in;
+  order: 2;
+  margin-bottom: 16px;
+}
+
+.editTaskButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0A2239;
+  margin-left: 20px;
+  width: 65px;
+  height: 30px;
+}
+
+.editTaskButton:hover {
+  background-color: #0A2239;
+}
+
+.editTaskButton:active {
+  background-color: #0A2239;
+}
+
+.editTaskButton:focus {
+  background-color: #0A2239;
+}
+
+.modal-content {
+  background-color: #E5E7E6;
+}
+
+.saveEditButton {
+  background-color: #0A2239;
+}
+
+.saveEditButton:hover {
+  background-color: #0A2239;
+}
+
+.saveEditButton:active {
+  background-color: #0A2239;
+}
+
+.saveEditButton:focus {
+  background-color: #0A2239;
+}
+
+.h2 {
+  width: 3em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.active {
+  color: white;
+  background-color: #0A2239;
+  border-radius: 3px;
+}
+
+.actualListName {
+  cursor: pointer;
+  font-size: 30px;
+  text-align: center;
+}
+
+.actualListName:hover {
+  opacity: 0.7;
+}
+
+[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+}
+
+.taskCheck {
+  margin-bottom: 0;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.taskComplete {
+  display: flex;
+  align-items: center;
+  opacity: 0.4;
+}
+
+.task label {
+  position: relative;
+}
+
+.customCheck {
+  display: inline-block;
+  margin-right: 16px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.customCheckFilled {
+  display: inline-block;
+  margin-right: 16px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.deleteWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
+  height: 20px;
+  width: 20px;
+}
+
+.trashImg {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+}
 
 /*# sourceMappingURL=styles.css.map */
